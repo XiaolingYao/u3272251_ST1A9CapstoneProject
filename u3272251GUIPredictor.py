@@ -142,10 +142,18 @@ class diamondPredictorGUI():
 
             if self.cut.get() != '':
                 self.__diamond.cut = self.cut.get()
+            else:
+                self.__diamond.cut = 'Unknown'
+
             if self.color.get() != '':
                 self.__diamond.color = self.color.get()
+            else:
+                self.__diamond.color = 'Unknown'
+
             if self.clarity.get() != '':
                 self.__diamond.clarity = self.clarity.get()
+            else:
+                self.__diamond.clarity = 'Unknown'
 
             result_string = '\n' + '=' * 70
             result_string += f'\nThe Predicted Price for Your Diamond: {self.__XGBModel.predict(data=self.__diamond.predictionData())}\n'
